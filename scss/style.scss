@@ -1,0 +1,110 @@
+@charset "utf-8";
+/*
+Template: swell
+Theme Name: RYOUGAECHO
+Theme URI: https://swell-theme.com/
+Description: SWELLの子テーマ
+Version: 1.0.0
+Author: LOOS WEB STUDIO
+Author URI: https://loos-web-studio.com/
+License: GNU General Public License
+License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+
+
+// =========================================================================================
+// style guide
+// CSS設計手法 FLOCSS( https://github.com/hiloki/flocss )
+// 
+// #命名規則
+// MindBEMdingをベースに以下のルールで記述
+// prefix-block__element, --modifier
+// prefixは基本アルファベット1文字とする
+// 複数単語になる場合は、（ block-name ）のようにケバブケースにする
+// modifierはセレクタを省略して記述する（ prefix-block__element--modifire ）ではなく（ --modifire ）
+// 
+// =========================================================================================
+
+
+/* Foundation
+ * 変数、関数、mixinを定義
+ * サイト全体のデフォルトスタイルを管理
+======================================*/
+
+/****** 変数定義 ******/
+@import "foundation/var";
+
+/****** mixin定義 ******/
+@import "foundation/mixin";
+
+/****** 関数定義 ******/
+@import "foundation/function";
+
+/****** ベースとなるスタイル ******/
+@import "foundation/base";
+
+
+/* Layout
+ * 接頭辞：l-
+ * 各ページを構成する大枠のエリアに対するレイアウトを定義
+======================================*/
+
+/****** ヘッダー ******/
+@import "layout/header";
+
+/****** フッター ******/
+@import "layout/footer";
+
+/****** コンテンツエリア ******/
+@import "layout/content";
+
+
+/* Object > Component
+ * 接頭辞：c-
+ * 再利用できるパターンとして最小単位のモジュールを定義
+======================================*/
+
+/****** 見出し/タイトル ******/
+@import "object/component/heading";
+
+/****** ラベル ******/
+@import "object/component/label";
+
+/****** ボタン ******/
+@import "object/component/btn";
+
+/****** ロゴ ******/
+@import "object/component/logo";
+
+
+
+/* Object > Project
+ * 接頭辞：p-
+ * 再利用できるパターンとしてComponentの集合体を定義
+ * もしくはComponentとするには大きすぎるObject（4階層構造以上を目安）を定義
+======================================*/
+
+/****** ブログカード ******/
+@import "object/project/card";
+
+/****** ナビゲーション ******/
+@import "object/project/nav";
+
+/****** フォーム ******/
+@import "object/project/form";
+
+
+/* Utility
+ * 接頭辞：u-
+ * スポットで状態変化させたいmarginなどの補助クラスを定義
+======================================*/
+
+/****** マージン ******/
+@import "utility/margin";
+
+/****** パディング ******/
+@import "utility/padding";
+
+/****** その他 ******/
+@import "utility/other";

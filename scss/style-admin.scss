@@ -1,0 +1,53 @@
+@charset "utf-8";
+// =========================================================================================
+// style guide（管理画面）
+// CSS設計手法 FLOCSS( https://github.com/hiloki/flocss )
+// 
+// #命名規則
+// MindBEMdingをベースに以下のルールで記述
+// prefix-block__element, --modifier
+// prefixは基本アルファベット1文字とする
+// 複数単語になる場合は、（ block-name ）のようにケバブケースにする
+// modifierはセレクタを省略して記述する（ prefix-block__element--modifire ）ではなく（ --modifire ）
+// 
+// =========================================================================================
+
+/****** 変数定義 ******/
+@import "foundation/var";
+
+/****** mixin定義 ******/
+@import "foundation/mixin";
+
+/****** 関数定義 ******/
+@import "foundation/function";
+
+/*--------------------------------
+ *  ACFメッセージを見出しとして利用
+--------------------------------*/
+.acf-field.acf-field-message .acf-label label {
+	font-size: 1.25em;
+	font-weight: bold;
+	background-color: #2271b1;
+	color: #fff;
+	border-radius: 3px;
+	padding: .25em .5em;
+}
+
+/*--------------------------------
+ *  エディター内見出しのスタイル変更
+--------------------------------*/
+#editor .editor-styles-wrapper {
+
+	h2[data-type="core/heading"]:not(.is-style-section_ttl) {
+		@include heading_lv2;
+	}
+
+	h3[data-type="core/heading"]:not(.is-style-section_ttl) {
+		@include heading_lv3;
+	}
+
+	h4[data-type="core/heading"]:not(.is-style-section_ttl) {
+		@include heading_lv4;
+	}
+
+}

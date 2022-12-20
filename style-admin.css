@@ -1,0 +1,28 @@
+@charset "utf-8";
+/****** 変数定義 ******/
+/****** mixin定義 ******/
+/****** 関数定義 ******/
+/*--------------------------------
+ *  ACFメッセージを見出しとして利用
+--------------------------------*/
+.acf-field.acf-field-message .acf-label label {
+  font-size: 1.25em;
+  font-weight: bold;
+  background-color: #2271b1;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0.25em 0.5em;
+}
+/*--------------------------------
+ *  エディター内見出しのスタイル変更
+--------------------------------*/
+#editor .editor-styles-wrapper h2[data-type="core/heading"]:not(.is-style-section_ttl) {
+  font-family: inherit;
+}
+#editor .editor-styles-wrapper h3[data-type="core/heading"]:not(.is-style-section_ttl) {
+  font-family: inherit;
+}
+#editor .editor-styles-wrapper h4[data-type="core/heading"]:not(.is-style-section_ttl) {
+  font-family: inherit;
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sourceRoot%22%3A%22http%3A%2F%2Fryougaecho.local%2F%22%2C%22sources%22%3A%5B%22wp-content%2Fthemes%2Fryougaecho%2Fscss%2Fstyle-admin.scss%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAA0BA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAA1BA%3BAAAA%3BAAAA%3BAAwCC%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%22%7D */

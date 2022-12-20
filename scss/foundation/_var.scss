@@ -1,0 +1,40 @@
+//--------------------------------
+//	テーマカラー
+//	色指定は[カスタマイザー > サイト全体設定 > 基本カラー]より.
+//--------------------------------
+// メインカラー：var( --color_main )
+// テキストカラー：var( --color_text )
+// リンクカラー：var( --color_link )
+// 背景色：var( --color_bg )
+
+//--------------------------------
+//	ブレイクポイント（SWELLと同一に調整済）
+//--------------------------------
+$bp_mobile: 599px; // スマートフォン 〜 タブレット.
+$bp_desc: 960px; // タブレット 〜 PC.
+
+//--------------------------------
+//	行間隔
+//--------------------------------
+$lh_none: 1;
+$lh_xtight: 1.15;
+$lh_tight: 1.5;
+$lh_normal: 1.8;
+$lh_loose: 2;
+
+//--------------------------------
+//	コンテンツ幅制御
+//--------------------------------
+$container_wdth: 1180;
+$container_wdth_px: $container_wdth * 1px;
+$container_gutter: 16;
+$container_gutter_px: $container_gutter * 1px;
+$article_width: 900;
+$article_width_px: $article_width * 1px;
+
+//--------------------------------
+//	タイポグラフィ
+//--------------------------------
+//------ フォントファミリー -------//
+$ff_base: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; // ゴシック体.
+$ff_sub: "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif; // 明朝体.

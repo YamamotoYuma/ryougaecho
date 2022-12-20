@@ -1,0 +1,117 @@
+/*--------------------------------
+    デフォルト
+--------------------------------*/
+.p-card__unit {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+	max-width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 20px;
+	font-size: 16px;
+	@include media(sm) {
+        row-gap: 25px;
+    }
+}
+
+.p-card {
+	display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+	align-items: center;
+    @include media(sm) {
+        grid-template-columns: 100%;
+		column-gap: unset;
+        row-gap: 10px;
+    }
+}
+
+.p-card__inner {
+    &.--meta {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+        align-items: center;
+    }
+    &.--article {
+        min-width: 0;
+    }
+}
+
+.p-card__date {
+    font-size: inherit;
+}
+
+.p-card__ttl {
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;  
+	-o-text-overflow: ellipsis;
+    &:focus,
+    &:hover {
+        color: var( --color_main );
+    }
+}
+
+/*--------------------------------
+    検索結果
+--------------------------------*/
+.p-card-search__unit {
+	border-top: 1px solid #ddd;
+}
+
+.p-card-search {
+	padding: 1em .25em;
+	font-size: rem(16);
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	@include media(sm) {
+		font-size: rem(14);
+	}
+}
+
+.p-card-search__layer {
+	@include layer;
+	&:focus,
+	&:hover {
+		~ .p-card-search__inner .p-card-search__ttl {
+			color: var( --color_main );
+		}
+	}
+}
+
+.p-card-search__inner {
+	&.--head {
+		margin-bottom: 1em;
+	}
+}
+
+.p-card-search__ttl {
+	line-height: 1.5;
+	font-weight: bold;
+	transition: .25s;
+}
+
+/*--------------------------------
+    記事が存在しない場合
+--------------------------------*/
+.p-card-not {
+	padding: 2em 1em;
+	background-color: #efefef;
+	border: 1px solid #ddd;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.p-card-not__txt {
+	font-size: rem(16);
+	font-weight: bold;
+	color: #BBB;
+}

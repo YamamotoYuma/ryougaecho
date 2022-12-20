@@ -1,0 +1,24 @@
+/*--------------------------------
+    サイトロゴ
+--------------------------------*/
+.c-logo-site {
+	margin: 0;
+	display: inline-block;
+	position: relative;
+}
+
+.c-logo-site__layer {
+	@include layer;
+    &:focus,
+    &:hover {
+        ~ .c-logo-site__img {
+            opacity: .6;
+        }
+    }
+}
+
+.c-logo-site__img {
+	height: 30px;
+    display: block;
+    transition: .25s;
+}

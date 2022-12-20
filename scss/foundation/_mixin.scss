@@ -1,0 +1,145 @@
+//--------------------------------
+//  コンテンツエリア幅の定義（コンテンツ幅指定は[カスタマイザー > サイト全体設定 > 基本デザイン]より）
+//  ※"l-container"クラス付与でも代用可能
+//--------------------------------
+@mixin contentArea {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  var(--swl-pad_container, 0);
+    padding-right:  var(--swl-pad_container, 0);
+    max-width: calc(var(--container_size, 0px) + var(--swl-pad_container, 0px)*2);
+}
+
+//--------------------------------
+//  全幅セクション（ly_contが1カラムレイアウトの場合み適用可）
+//  @param str padding 左右のコンテンツエリアパディングを取る場合はpを入力
+//                null  => コンテンツエリアパディングなし
+//                both  => コンテンツエリアパディングあり
+//                right => 右側のみコンテンツエリアパディングあり
+//                left  => 左側のみコンテンツエリアパディングあり
+//--------------------------------
+@mixin contentAreaFullWidth($padding:'') {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    @if $padding == both {
+        padding-left: calc(50vw - 50%);
+        padding-right: calc(50vw - 50%);
+    } @else if $padding == right{
+        padding-right: calc(50vw - 50%);
+    } @else if $padding == left {
+        padding-left: calc(50vw - 50%);
+    }
+}
+
+//--------------------------------
+//  メディアクエリ制御（ブレイクポイントは[variable.scss]にて定義）
+//  @param str size 適用デバイスの指定
+//              sm => モバイル
+//              md => タブレット
+//              lg => デスクトップ
+//              smmd => モバイル＋タブレット
+//              mdlg => タブレット＋デスクトップ
+//--------------------------------
+@mixin media($size) { //[引数]sm：モバイル
+    @if $size == sm {
+        @media screen and (max-width : $bp_mobile){
+            @content;
+        }
+    }
+    @else if $size == md { //[引数]md：タブレット
+        @media screen and (min-width : ( $bp_mobile + 1) ) and (max-width : $bp_desc){ //タブレットのみ適用
+            @content;
+        }
+    }
+    @else if $size == lg { //[引数]lg：デスクトップ
+        @media screen and (min-width : ( $bp_desc + 1 )){
+            @content;
+        }
+    }
+    @else if $size == smmd { //[引数]smmd：モバイル＋タブレット
+        @media screen and (max-width : $bp_desc){
+            @content;
+        }
+    }
+    @else if $size == mdlg { //[引数]mdlg：タブレット＋デスクトップ
+        @media screen and (min-width : ( $bp_mobile + 1 )){
+            @content;
+        }
+    }
+}
+
+//--------------------------------
+//  Font Awesome 6 （アイコンフォントのスタイル）
+//--------------------------------
+@mixin fas { // Font Awesome 6 Free Solid.
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+@mixin far { // Font Awesome 6 Free Regular.
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 400;
+}
+
+@mixin fab { // Font Awesome 6 Free Brands.
+    font-family: 'Font Awesome 6 Brands';
+    font-weight: 400;
+}
+
+//--------------------------------
+//  フルードイメージ
+//  @param int width 幅を単位なしで指定
+//  @param int height 高さを単位なしで指定
+//--------------------------------
+@mixin fluid ( $width:1, $height:1 ) {
+    position: relative;
+	overflow: hidden;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+		height: auto;
+        padding-top: percentage( $height / $width );
+    }
+	> * {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+//--------------------------------
+//  リンクレイアー（要素全体にリンクエリアを適用）
+//  ※注：親要素に[position: relative;]を指定すること
+//--------------------------------
+@mixin layer() {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+//--------------------------------
+//  エディター用見出しスタイル
+//--------------------------------
+@mixin heading_lv2() {
+	font-family: inherit;
+}
+
+@mixin heading_lv3() {
+	font-family: inherit;
+}
+
+@mixin heading_lv4() {
+	font-family: inherit;
+}

@@ -1,0 +1,23 @@
+:root {
+	--swl-pad_container: #{$container_gutter_px}!important;
+	--container_size: #{$container_wdth_px}!important;
+	--article_size: #{$article_width_px}!important;
+}
+
+a {
+    color: unset;
+}
+
+a[href^="tel:"] {
+    @include media(mdlg) {
+        pointer-events: none;
+    }
+}
+
+address {
+    font-style: unset;
+}
+
+figure {
+    line-height: 1;
+}

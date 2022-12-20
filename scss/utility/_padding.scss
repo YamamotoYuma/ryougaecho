@@ -1,0 +1,106 @@
+//--------------------------------
+//  全てのデバイス幅で適用
+//--------------------------------
+//単位pxごとの絶対値自動生成
+$spacePaddingPx: true !default;
+$spacePaddingPxEndValue: 10 !default;
+
+@if $spacePaddingPx {
+    @for $i from 0 through $spacePaddingPxEndValue {
+        .u-pt#{$i*5} {padding-top: 5px * $i !important;}
+        .u-pb#{$i*5} {padding-bottom: 5px * $i !important;}
+    }
+}
+
+//単位emごとの絶対値自動生成
+$spacePaddingEm: true !default;
+$spacePaddingEmEndValue: 10 !default;
+
+@if $spacePaddingEm {
+    @for $i from 0 through $spacePaddingEmEndValue {
+        $iCount: #{$i/4};
+        .u-pt#{str-replace(".", "_", $iCount, true)}e {margin-top: .25em * $i !important;}
+        .u-pb#{str-replace(".", "_", $iCount, true)}e {margin-bottom: .25em * $i !important;}
+    }
+}
+
+//--------------------------------
+//  デスクトップ幅のみ適用
+//--------------------------------
+@include media(lg) {
+    //単位pxごとの絶対値自動生成
+    $spacePaddingPxLg: true !default;
+    $spacePaddingPxEndValue: 10 !default;
+
+    @if $spacePaddingPxLg {
+        @for $i from 0 through $spacePaddingPxEndValue {
+            .l-pt#{$i*5} {padding-top: 5px * $i !important;}
+            .l-pb#{$i*5} {padding-bottom: 5px * $i !important;}
+        }
+    }
+
+    //単位emごとの絶対値自動生成
+    $spacePaddingEmLg: true !default;
+    $spacePaddingEmEndValue: 10 !default;
+
+    @if $spacePaddingEmLg {
+        @for $i from 0 through $spacePaddingEmEndValue {
+            $iCount: #{$i/4};
+            .l-pt#{str-replace(".", "_", $iCount, true)}e {margin-top: .25em * $i !important;}
+            .l-pb#{str-replace(".", "_", $iCount, true)}e {margin-bottom: .25em * $i !important;}
+        }
+    }
+}
+
+//--------------------------------
+//  タブレット幅のみ適用
+//--------------------------------
+@include media(md) {
+    //単位pxごとの絶対値自動生成
+    $spacePaddingPxMd: true !default;
+
+    @if $spacePaddingPxMd {
+        @for $i from 0 through $spacePaddingPxEndValue {
+            .m-pt#{$i*5} {padding-top: 5px * $i !important;}
+            .m-pb#{$i*5} {padding-bottom: 5px * $i !important;}
+        }
+    }
+
+    //単位emごとの絶対値自動生成
+    $spacePaddingEmMd: true !default;
+
+    @if $spacePaddingEmMd {
+        @for $i from 0 through $spacePaddingEmEndValue {
+            $iCount: #{$i/4};
+            .m-pt#{str-replace(".", "_", $iCount, true)}e {margin-top: .25em * $i !important;}
+            .m-pb#{str-replace(".", "_", $iCount, true)}e {margin-bottom: .25em * $i !important;}
+        }
+    }
+}
+
+//--------------------------------
+//  スマートフォン幅のみ適用
+//--------------------------------
+@include media(sm) {
+    //単位pxごとの絶対値自動生成
+    $spacePaddingPxSm: true !default;
+
+
+    @if $spacePaddingPxSm {
+        @for $i from 0 through $spacePaddingPxEndValue {
+            .s-pt#{$i*5} {padding-top: 5px * $i !important;}
+            .s-pb#{$i*5} {padding-bottom: 5px * $i !important;}
+        }
+    }
+
+    //単位emごとの絶対値自動生成
+    $spacePaddingEmSm: true !default;
+
+    @if $spacePaddingEmSm {
+        @for $i from 0 through $spacePaddingEmEndValue {
+            $iCount: #{$i/4};
+            .s-pt#{str-replace(".", "_", $iCount, true)}e {margin-top: .25em * $i !important;}
+            .s-pb#{str-replace(".", "_", $iCount, true)}e {margin-bottom: .25em * $i !important;}
+        }
+    }
+}

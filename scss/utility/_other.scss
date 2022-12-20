@@ -1,0 +1,32 @@
+//--------------------------------
+//  デバイス別 表示/非表示
+//  sm　：スマートフォン幅、モバイル幅のみ表示
+//  md　：タブレット幅のみ表示
+//  lg　：PC幅のみ表示
+//  mdlg：デスクトップ幅のみ表示
+//--------------------------------
+@include media(lg) {
+    .md {display:none!important;}
+    .sm {display:none!important;}
+    .smmd {display:none!important;}
+}
+
+@include media(md) {
+    .lg {display:none!important;}
+    .sm {display:none!important;}
+}
+
+@include media(sm) {
+    .lg {display:none!important;}
+    .md {display:none!important;}
+    .mdlg {display:none!important;}
+}
+
+//--------------------------------
+//  フロート・クリアフィックス
+//--------------------------------
+.clearfix::after {
+	display: block;
+	content: "";
+	clear: both;
+}
