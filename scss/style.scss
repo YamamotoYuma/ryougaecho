@@ -80,6 +80,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 /****** ロゴ ******/
 @import "object/component/logo";
 
+/****** Google Map ******/
+@import "object/component/map";
+
 
 
 /* Object > Project
@@ -102,6 +105,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 /****** スマホ開閉メニュー ******/
 @import "object/project/spMenu";
+
+/****** メディアとテキスト ******/
+@import "object/project/media";
 
 
 /* Utility

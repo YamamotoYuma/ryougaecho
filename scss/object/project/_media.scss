@@ -1,0 +1,49 @@
+.p-media {
+    display: flex;
+    column-gap: cw(60);
+    @include media(sm) {
+        display: block;
+    }
+}
+
+.p-media__col {
+    flex: 1;
+}
+
+.p-media__col.--right {
+    @include media(sm) {
+        margin-top: 20px;
+    }
+}
+
+.p-media__img {
+    @include frame;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.p-media__title {
+    margin-bottom: em(40,22);
+    font-size: cw(22);
+    font-weight: bold;
+    @include media(sm) {
+        margin-bottom: 1em;
+        font-size: 20px;
+    }
+}
+
+.p-media__desc {
+    @include media(sm) {
+        font-size: 16px;
+    }
+}
+
+.p-media .c-btn {
+    margin-top: em(60);
+    @include media(sm) {
+        margin: 0 auto;
+        margin-top: em(30);
+        font-size: 16px;
+    }
+}

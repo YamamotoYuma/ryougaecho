@@ -41,3 +41,18 @@
         font-size: em(24,40);
     }
 }
+
+/*------ NEWS -------*/
+.c-heading-lv2-small {
+    margin-bottom: em(40,48);
+    font-size: cw(48);
+    font-family: $ff_din;
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 1;
+    @include media(sm) {
+        margin-bottom: 30px;
+        font-size: 40px;
+        text-align: center;
+    }
+}

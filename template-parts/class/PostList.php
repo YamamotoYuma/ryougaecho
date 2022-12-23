@@ -71,6 +71,7 @@ class PostList {
 	public function the_card() {
 		?>
 		<div class="p-card">
+			<a href="<?php the_permalink(); ?>" class="p-card__layer"></a>
 			<div class="p-card__inner --meta">
 				<time class="p-card__date" datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>">
 					<?php the_time( 'Y.m.d' ); // 投稿日. ?>
@@ -79,9 +80,9 @@ class PostList {
 			</div>
 			<!-- /.p-card__inner --meta -->
 			<div class="p-card__inner --article">
-				<a href="<?php the_permalink(); // リンク先. ?>" class="p-card__ttl">
+				<p class="p-card__ttl">
 					<?php echo esc_html( get_the_title() ); // タイトル. ?>
-				</a>
+				</p>
 				<!-- /.p-card__cont -->
 			</div>
 			<!-- /.p-card__inner --ttl -->
@@ -94,24 +95,17 @@ class PostList {
 	 * ------ 投稿カードの出力：カードタイプ -------
 	 *
 	 */
-	public function the_card_column() {
+	public function the_card_blog() {
 		?>
-		<div class="p-card-column">
-			<a class="p-card-column__layer" href="<?php the_permalink(); ?>"></a>
-			<figure class="u-plainFigure p-card-column__img">
+		<div class="p-card-blog">
+			<a class="p-card-blog__layer" href="<?php the_permalink(); ?>"></a>
+			<div class="p-card-blog__img">
 				<img src="<?php echo get_swell_thumbnail_url() ;?>" alt="サムネイル画像">
-			</figure>
-			<div class="p-card-column__text">
-				<div class="p-card-column__meta">
-					<?php $this->the_term_badge( $this->param['taxonomy'], false, '--column' ); ?>
-					<time class="p-card-column__date" datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php the_time( 'Y/m/d' ); ?></time>
-				</div>
-				<!-- /.p-card-column__meta -->
-				<p class="p-card-column__title"><?php the_title(); ?></p>
 			</div>
-			<!-- /.p-card-column__text -->
+			<p class="p-card-blog__title"><?php the_title(); ?></p>
+			<span class="c-label-more">詳しく見る</span>
 		</div>
-		<!-- /.p-card-column -->
+		<!-- /.p-card-blog -->
 		<?php
 	}
 
@@ -145,7 +139,7 @@ class PostList {
 					<?php echo esc_html( $terms[0]->name ); ?>
 				</a>
 			<?php else : // $terms. ?>
-				<span class="c-label-term<?php $this->fall_back( 'add_class', $mod ); ?>" style="pointer-events:none;">未分類</span>
+				<span class="c-label-term --null<?php $this->fall_back( 'add_class', $mod ); ?>">未分類</span>
 			<?php endif; // $terms. ?>
 		<?php endif; // $multiple . ?>
 		<?php

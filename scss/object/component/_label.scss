@@ -1,16 +1,14 @@
 /*--------------------------------
-    タームバッジ
+ *  タームバッジ
 --------------------------------*/
 .c-label-term {
-	padding: 5px 10px 5px;
+	padding: 5px;
     font-size: em(14,16);
     line-height: 1;
-    width: 110px;
+    width: 100px;
     text-align: center;
-    outline: 1px solid transparent;
-    outline-offset: -1px;
-	background-color: var( --color_main );
-	color: #fff;
+    border: 1px solid #000;
+	color: initial;
     transition: .25s;
     overflow: hidden;
     white-space: nowrap;
@@ -19,6 +17,43 @@
 	-o-text-overflow: ellipsis;
     &:focus,
     &:hover {
-        opacity: 0.6;
+        background-color: #000;
+        color: #fff;
     }
+}
+
+/*------ 未分類 -------*/
+.c-label-term.--null {
+    pointer-events: none;
+    border-color: #bbb;
+    background-color: #bbb;
+    color: #fff;
+}
+
+/*--------------------------------
+ *  詳しく見る
+--------------------------------*/
+.c-label-more {
+    display: flex;
+    width: fit-content;
+    column-gap: em(10);
+    align-items: center;
+    line-height: 1;
+    &:focus,
+    &:hover {
+        &::after {
+            transform: translateX(4px);
+        }
+    }
+}
+
+.c-label-more::after {
+    width: em(24);
+    height: em(24);
+    content: '';
+    background-image: url('./img/icon/ic_01.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: .25s;
 }

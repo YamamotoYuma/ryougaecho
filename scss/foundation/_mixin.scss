@@ -143,3 +143,12 @@
 @mixin heading_lv4() {
 	font-family: inherit;
 }
+
+//--------------------------------
+//  額縁
+//--------------------------------
+@mixin frame() {
+    border-radius: 10px;
+    border: 6px solid #fff;
+    overflow: hidden;
+}

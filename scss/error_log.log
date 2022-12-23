@@ -1,3 +1,9 @@
 12/21/22 2:12:20: style.scss - Undefined variable $tight: object/project/_nav.scss on line 16, at column 2
 Call Stack:
 #0 import object/project/_nav.scss style.scss on line 95
+12/23/22 7:28:53: style.scss - Undefined mixin flame: layout/_sect.scss on line 101, at column 5
+Call Stack:
+#0 import layout/_sect.scss style.scss on line 63
+12/23/22 7:30:54: style.scss - Undefined mixin flame: layout/_sect.scss on line 101, at column 5
+Call Stack:
+#0 import layout/_sect.scss style.scss on line 63

@@ -1,0 +1,22 @@
+.c-map {
+    @include frame;
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+		height: auto;
+        padding-top: percentage( 400 / 1180 );
+        @include media(sm) {
+            padding-top: percentage( 200 / 335 );
+        }
+    }
+	> * {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
