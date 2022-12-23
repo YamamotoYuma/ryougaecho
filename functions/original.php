@@ -104,24 +104,21 @@ function get_swell_thumbnail_url( $postID = '' ) {
 */
 
 /**
- * サイトロゴ
+ * サイトロゴ（白）
  *
- * @param str $area 設置エリア（header, footer）、モディファイアクラス（文頭に'--'を自動付与） .
  */
-function logo_site( $area = 'header' ) {
-    $field = 'ad_siteLogo_' . $area;
-    if ( get_field( $field, 'option' ) ) {
-        $obj = get_field( $field, 'option' );
-    } else {
-        $obj = get_field( 'ad_siteLogo_header', 'option' );
-    }
-    $mod = '--' . $area;
-    ?>
-    <figure class="c-logo-site<?php add_class( $mod ) ;?>">
-        <a href="<?php echo esc_url( home_url() ); ?>" class="c-logo-site__layer" rel="home"></a>
-        <img src="<?php echo esc_attr( $obj['url'] ) ;?>" class="c-logo-site__img" alt="<?php echo esc_attr( $obj['alt'] ) ;?>">
-    </figure>
-    <?php
+function get_site_logo_white() {
+	$img_src = get_stylesheet_directory_uri() . '/img/site-logo_w.svg';
+
+	if ( is_front_page() ) {
+		$wrapper_start = '<div class="c-logo-white__link">';
+		$wrapper_end   = '</div>';
+	} else {
+		$wrapper_start = '<a class="c-logo-white__link" href="' . home_url() . '">';
+		$wrapper_end   = '</a>';
+	}
+
+	return $wrapper_start . '<img src="' . $img_src . '" class="c-logo-white__img" alt="' . get_bloginfo( 'name' ) . '">' . $wrapper_end;
 }
 
 /**

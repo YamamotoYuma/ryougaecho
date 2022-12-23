@@ -13,14 +13,14 @@
  */
 function my_change_menu_label() {
 	global $menu;
-	$name = 'コラム';
+	$name = '活動ブログ';
 	$menu[5][0] = $name;
 }
 add_action( 'admin_menu', 'my_change_menu_label' );
 
 function my_change_object_label() {
 	global $wp_post_types;
-	$name = 'コラム';
+	$name = '活動ブログ';
 	$labels = &$wp_post_types['post']->labels;
 	$labels->name = $name;
 	$labels->singular_name = $name;
@@ -35,11 +35,11 @@ function my_change_object_label() {
 function post_has_archive( $args, $post_type ) {
 	if ( 'post' === $post_type ) {
 		$args['rewrite']     = true;
-		$args['has_archive'] = 'news'; // 該当固定ページスラッグ（任意の値に変更可能）.
+		$args['has_archive'] = 'blog'; // 該当固定ページスラッグ（任意の値に変更可能）.
 	}
 	return $args;
 }
-// add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 
 /**
  * --------------------------------
@@ -55,7 +55,7 @@ function custom_post_type_link( $link, $post ){
 	}
 	return $link;
 }
-// add_filter( 'post_type_link', 'custom_post_type_link', 1, 2 );
+add_filter( 'post_type_link', 'custom_post_type_link', 1, 2 );
 
 function custom_rewrite_rules_array( $rules ) {
 	$new_rules = array();
@@ -67,7 +67,7 @@ function custom_rewrite_rules_array( $rules ) {
 	}
 	return $new_rules + $rules;
 }
-// add_filter( 'rewrite_rules_array', 'custom_rewrite_rules_array' );
+add_filter( 'rewrite_rules_array', 'custom_rewrite_rules_array' );
 
 /**
  * --------------------------------

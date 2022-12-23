@@ -1,24 +1,13 @@
 /*--------------------------------
-    サイトロゴ
+    サイトロゴ（白）
 --------------------------------*/
-.c-logo-site {
-	margin: 0;
-	display: inline-block;
-	position: relative;
+.c-logo-white__link {
+	display: block;
+	width: fit-content;
 }
 
-.c-logo-site__layer {
-	@include layer;
-    &:focus,
-    &:hover {
-        ~ .c-logo-site__img {
-            opacity: .6;
-        }
-    }
-}
-
-.c-logo-site__img {
-	height: 30px;
-    display: block;
-    transition: .25s;
+.c-logo-white__img {
+	display: block;
+	width: auto;
+	height: 48px;
 }

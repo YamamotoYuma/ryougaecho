@@ -1,0 +1,43 @@
+/*--------------------------------
+ *  h2
+--------------------------------*/
+.c-heading-lv2 {
+    margin-bottom: em(48,64);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    column-gap: em(20,64);
+    font-size: cw(64);
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    text-align: center;
+    @include media(sm) {
+        margin-bottom: 30px;
+        width: auto;
+        display: block;
+        font-size: 40px;
+    }
+}
+
+.c-heading-lv2__en {
+    display: block;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: $ff_din;
+    @include media(sm) {
+        margin-bottom: 5px;
+    }
+}
+
+.c-heading-lv2__jp {
+    display: block;
+    font-size: .5em;
+    line-height: em(46,32);
+    border-bottom: 4px solid currentColor;
+    width: fit-content;
+    margin: 0 auto;
+    @include media (sm) {
+        font-size: em(24,40);
+    }
+}

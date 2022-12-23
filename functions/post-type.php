@@ -34,13 +34,13 @@ function my_custom_init() {
 			'menu_position' => 4,
 			'has_archive'   => true,
 			'show_in_rest'  => true,
-			'menu_icon'     => 'dashicons-admin-post',
+			'menu_icon'     => 'dashicons-warning',
 			'rewrite'       => array('with_front' => false),
 		)
 	);
 	/*------ タクソノミー：お知らせのカテゴリー -------*/
 	register_taxonomy(
-		'category_news', // タクソノミースラッグ.
+		'news_category', // タクソノミースラッグ.
 		'news', // 投稿タイプ.
 		array(
 			'hierarchical'          => true,
@@ -53,5 +53,46 @@ function my_custom_init() {
 			'show_in_quick_edit'    => true,
 		)
 	);
+		/*
+	--------------------------------
+	* 投稿タイプ：テナント
+	--------------------------------
+	*/
+	register_post_type(
+		'tenant',
+		array(
+			'label'         => 'テナント',
+			'labels' => array(
+				'add_new' => '新規追加',
+				'edit_item' => 'テナントの編集',
+				'view_item' => 'テナントを表示',
+				'search_items' => 'テナントを検索',
+				'not_found' => 'テナントは見つかりませんでした。',
+				'not_found_in_trash' => 'ゴミ箱にテナントはありませんでした。'
+			  ),
+			'public'        => true,
+			'supports'      => array( 'title' ),
+			'menu_position' => 5,
+			'has_archive'   => true,
+			'show_in_rest'  => true,
+			'menu_icon'     => 'dashicons-store',
+			'rewrite'       => array('with_front' => false),
+		)
+	);
+	/*------ タクソノミー：テナントのタグ -------*/
+	register_taxonomy(
+		'tenant_tag',
+		'tenant',
+		array(
+			'hierarchical'          => false,
+			'update_count_callback' => '_update_post_term_count',
+			'label'                 => 'タグ',
+			'public'                => true,
+			'show_in_rest'          => true,
+			'show_ui'               => true,
+			'show_admin_column'     => true,
+			'show_in_quick_edit'    => true,
+		)
+	);
 }
-// add_action( 'init', 'my_custom_init' );
+add_action( 'init', 'my_custom_init' );

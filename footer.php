@@ -20,6 +20,11 @@ if ( SWELL_Theme::is_show_sidebar() ) {
 		echo '</div>';
 	endif;
 
+	// CTA
+	if ( ! is_page( array( 'contact', 'thanks' ) ) ) {
+		SWELL_Theme::get_parts( 'parts/cta');
+	}
+
 	// ぱんくず
 	if ( 'top' !== $SETTING['pos_breadcrumb'] ) :
 		SWELL_Theme::get_parts( 'parts/breadcrumb' );

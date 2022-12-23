@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://use.typekit.net/xge5tty.css');
 /****** 変数定義 ******/
 /****** mixin定義 ******/
 /****** 関数定義 ******/
@@ -25,4 +26,4 @@
 #editor .editor-styles-wrapper h4[data-type="core/heading"]:not(.is-style-section_ttl) {
   font-family: inherit;
 }
-/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sourceRoot%22%3A%22http%3A%2F%2Fryougaecho.local%2F%22%2C%22sources%22%3A%5B%22wp-content%2Fthemes%2Fryougaecho%2Fscss%2Fstyle-admin.scss%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAA0BA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAA1BA%3BAAAA%3BAAAA%3BAAwCC%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%22%7D */
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sourceRoot%22%3A%22http%3A%2F%2Fryougaecho.local%2F%22%2C%22sources%22%3A%5B%22wp-content%2Fthemes%2Fryougaecho%2Fscss%2Fstyle-admin.scss%22%2C%22wp-content%2Fthemes%2Fryougaecho%2Fscss%2Ffoundation%2F_var.scss%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAAA%3BACyCA%3BADzCA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAA0BA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAA1BA%3BAAAA%3BAAAA%3BAAwCC%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%22%7D */

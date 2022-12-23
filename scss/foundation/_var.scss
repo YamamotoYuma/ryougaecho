@@ -38,3 +38,6 @@ $article_width_px: $article_width * 1px;
 //------ フォントファミリー -------//
 $ff_base: "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; // ゴシック体.
 $ff_sub: "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif; // 明朝体.
+
+@import url('https://use.typekit.net/xge5tty.css');
+$ff_din: 'din-2014', sans-serif;

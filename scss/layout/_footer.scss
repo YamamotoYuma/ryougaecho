@@ -1,0 +1,84 @@
+.l-footer__body {
+	padding-top: 80px;
+	padding-bottom: 55px;
+	@include media(smmd) {
+		padding-top: 40px;
+		padding-bottom: 60px;
+	}
+}
+
+.l-footer__body__inner {
+	display: flex;
+	column-gap: cw(80);
+}
+
+.l-footer__col {
+	&.--profile {
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		@include media(smmd) {
+			margin-left: auto;
+			align-items: center;
+			gap: 35px;
+		}
+	}
+	&.--navi {
+		display: flex;
+		column-gap: cw(90);
+		@include media(smmd) {
+			display: none;
+		}
+	}
+	&.--cta {
+		@include media(smmd) {
+			display: none;
+		}
+	}
+}
+
+/*------ サイトロゴ -------*/
+.l-footer__logo {
+	width: fit-content;
+}
+
+/*------ 管理者情報 -------*/
+.l-footer__meta-box {
+	font-size: 14px;
+	> p:not(:first-child) {
+		margin-top: em(7,14);
+		@include media(smmd) {
+			text-align: center;
+		}
+	}
+}
+
+/*------ SNSアイコン -------*/
+.l-footer__col .c-iconList {
+	margin-bottom: 0;
+	justify-content: flex-start;
+}
+
+.l-footer__col .c-iconList__link {
+	font-size: 24px;
+}
+
+.l-footer__bottom {
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    @include media(smmd) {
+        display: block;
+        font-size: 12px;
+    }
+}
+
+/*------ コピーライト -------*/
+.l-footer .copyright {
+    font-size: inherit;
+    @include media(smmd) {
+        margin-top: 20px;
+    }
+}

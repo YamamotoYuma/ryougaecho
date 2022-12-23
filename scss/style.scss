@@ -59,6 +59,9 @@ License URI: http://www.gnu.org/licenses/gpl.html
 /****** コンテンツエリア ******/
 @import "layout/content";
 
+/****** セクション ******/
+@import "layout/sect";
+
 
 /* Object > Component
  * 接頭辞：c-
@@ -93,6 +96,12 @@ License URI: http://www.gnu.org/licenses/gpl.html
 
 /****** フォーム ******/
 @import "object/project/form";
+
+/****** メインビジュアル ******/
+@import "object/project/mainVisual";
+
+/****** スマホ開閉メニュー ******/
+@import "object/project/spMenu";
 
 
 /* Utility

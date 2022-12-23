@@ -1,0 +1,38 @@
+.c-btn {
+    padding: 18px 60px;
+    width: fit-content;
+    max-width: 100%;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    box-shadow: 5px 5px 0px rgba(#000,.3);
+    display: block;
+    line-height: $lh_tight;
+    text-align: center;
+    font-weight: bold;
+    transition: .25s;
+    &:focus,
+    &:hover {
+        .fas {
+            transition: 1s;
+            transform: rotateX(360deg);
+        }
+    }
+    &:active {
+        box-shadow: none;
+        transform: translateY(5px);
+    }
+    .fas {
+        margin-left: .5em;
+    }
+}
+
+.c-btn.--cta {
+    width: 420px;
+    background-color: #DC5C9B;
+    color: #fff;
+    font-size: 22px;
+    @include media(sm) {
+        font-size: 18px;
+    }
+}

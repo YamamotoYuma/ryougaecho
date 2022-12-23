@@ -1,0 +1,167 @@
+/*--------------------------------
+ *  CTA
+--------------------------------*/
+.l-sect-cta {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    @include media(sm) {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+}
+
+.l-sect-cta__title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    line-height: 1;
+    text-align: center;
+    @include media(sm) {
+        font-size: 24px;
+    }
+}
+
+.l-sect-cta__desc {
+    text-align: center;
+    font-size: 16px;
+}
+
+.l-sect-cta .c-btn {
+    margin: 0 auto;
+    margin-top: 40px;
+    @include media(sm) {
+        margin-top: 30px;
+    }
+}
+
+/*--------------------------------
+ *  ホーム
+--------------------------------*/
+/*------ 共通 -------*/
+.l-sect-home {
+    padding-top: 1px;
+    padding-bottom: 100px;
+    @include media(sm) {
+        padding-bottom: 60px;
+    }
+}
+
+/*------ FV -------*/
+.l-sect-fv {
+    @include contentAreaFullWidth;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 375/506;
+}
+
+/*------ NEWS -------*/
+.l-sect-news {
+    padding-top: 70px;
+    @include media(sm) {
+        padding-top: 40px;
+    }
+}
+
+/*------ AREA MAP 両替町マップ -------*/
+.l-sect-areaMap {
+    @include contentAreaFullWidth(both);
+    background-image: url('./img/texture/tx_04.jpg');
+}
+
+.l-sect-areaMap .c-heading-lv2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -.5em;
+}
+
+.l-sect-areaMap__map {
+    margin: 0 auto;
+    width: 980px;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 6px solid #fff;
+    overflow: hidden;
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*------ CHARM 魅力 / HISTORY 歴史 -------*/
+.l-sect-charmHistory {
+    @include contentAreaFullWidth(both);
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    display: flex;
+    @include media(sm) {
+        display: block;
+    }
+}
+
+.l-sect-charmHistory__col {
+    padding-top: 1px;
+    padding-bottom: 80px;
+    flex: 1;
+    @include media(sm) {
+        padding-bottom: 60px;
+    }
+    &.--charm {
+        margin-left: calc(50% - 50vw);
+        padding-left: calc(50vw - 50%);
+        padding-right: cw(120);
+        background-image: url('./img/texture/tx_02.jpg');
+        @include media(sm) {
+            margin-right: calc(50% - 50vw);
+            padding-right: calc(50vw - 50%);
+        }
+    }
+    &.--history {
+        margin-right: calc(50% - 50vw);
+        padding-right: calc(50vw - 50%);
+        padding-left: cw(120);
+        background-image: url('./img/texture/tx_05.jpg');
+        @include media(sm) {
+            margin-left: calc(50% - 50vw);
+            padding-left: calc(50vw - 50%);
+        }
+    }
+}
+
+.l-sect-charmHistory__col .c-heading-lv2 {
+    margin-top: -.5em;
+    @include media(sm) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*------ BLOG 活動記録 -------*/
+.l-sect-blog {
+    padding-top: 70px;
+    @include media(sm) {
+        padding-top: 1px;
+    }
+}
+
+.l-sect-blog .c-heading-lv2 {
+    @include media(sm) {
+        margin-top: -.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/*------ ABOUT 発展会概要 -------*/
+.l-sect-about {
+    @include contentAreaFullWidth(both);
+    background-image: url('./img/texture/tx_03.jpg');
+}
+
+.l-sect-about .c-heading-lv2 {
+    margin-top: -.5em;
+    @include media(sm) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

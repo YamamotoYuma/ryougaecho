@@ -6,7 +6,12 @@ $header_class = SWELL_Theme::get_header_class(); // ヘッダーとfixバーへ�
 
 // お知らせバー（上部表示）
 if ( $SETTING['info_bar_pos'] === 'head_top' ) SWELL_Theme::get_parts( 'parts/header/info_bar' );
+
+// FV
+$fv_img =  "'" . get_stylesheet_directory_uri() . "/img/picture/pi_01.jpg'";
+if ( is_front_page() || is_home() ) echo '<div class="p-mainVisual mdlg" style="background-image:url('. $fv_img .');"></div>';
 ?>
+
 <header id="header" class="l-header <?=esc_attr( $header_class )?>" data-spfix="<?=$SETTING['fix_header_sp'] ? '1' : '0'?>">
 	<?php if ( SWELL_Theme::is_use( 'head_bar' ) ) SWELL_Theme::get_parts( 'parts/header/head_bar' ); // ヘッダーバー ?>
 	<div class="l-header__inner l-container">
@@ -18,9 +23,15 @@ if ( $SETTING['info_bar_pos'] === 'head_top' ) SWELL_Theme::get_parts( 'parts/he
 		</div>
 		<nav id="gnav" class="l-header__gnav c-gnavWrap">
 			<?php
-				SWELL_Theme::pluggable_parts( 'gnav', [
-					'use_search' => 'head_menu' === $SETTING['search_pos'],
-				] );
+				// グローバルナビ
+				wp_nav_menu(
+					array(
+						'menu_id'        => 'gnavHeader',
+						'container'      => false,
+						'menu_class'     => 'p-nav-header',
+						'theme_location' => 'header_menu',
+					)
+				);
 			?>
 		</nav>
 		<?php
@@ -43,7 +54,7 @@ if ( $SETTING['info_bar_pos'] === 'head_top' ) SWELL_Theme::get_parts( 'parts/he
 <?php
 
 // FIXヘッダー
-if ( SWELL_Theme::is_use( 'fix_header' ) ) SWELL_Theme::get_parts( 'parts/header/fix_header', $header_class );
+// if ( SWELL_Theme::is_use( 'fix_header' ) ) SWELL_Theme::get_parts( 'parts/header/fix_header', $header_class );
 
 // お知らせバー（下部表示）
 if ( $SETTING['info_bar_pos'] === 'head_bottom' ) SWELL_Theme::get_parts( 'parts/header/info_bar' );

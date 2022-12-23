@@ -28,10 +28,8 @@ function underscores_widgets_init() {
  */
 function register_my_menu() {
 	register_nav_menus( [
-		'footer-1'        => __( 'フッター：1', 'swell' ),
-		'footer-2'        => __( 'フッター：2', 'swell' ),
-		'footer-3'        => __( 'フッター：3', 'swell' ),
-		'footer-4'        => __( 'フッター：4', 'swell' )
+		'footer_menu_2'        => __( 'フッター（右）', 'swell' ),
+		'footer_menu_3'        => __( 'フッター（下）', 'swell' ),
 	] );
 }
-//add_action( 'after_setup_theme', 'register_my_menu', 12 );
+add_action( 'after_setup_theme', 'register_my_menu', 12 );

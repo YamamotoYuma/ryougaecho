@@ -19,10 +19,11 @@
 //  $pxに指定した値が最大値となる（画面幅1600px時の値）
 //  最小値10px
 // --------------------------------
-@function vw($px, $min:10px) {
-    $max: $px * 1px; // 最大サイズ.
-    $vw : $px / 1600 * 100vw; // 可変サイズ.
-    @return clamp($min, $vw, $max);
+@function vw($max_size, $min_size:10) {
+    $max_size_px: $max_size * 1px; // 最大サイズ.
+    $vw_size : $max_size / 1600 * 100vw; // 可変サイズ.
+    $min_size_px: $min_size * 1px;
+    @return clamp($min_size_px, $vw_size, $max_size_px);
 }
 
 //--------------------------------
