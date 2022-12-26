@@ -1,0 +1,25 @@
+.l-content:not(.--contact):not(.--thanks) {
+    margin-bottom: 0!important;
+}
+
+.l-content-head__inner {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    @include media(sm) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+.l-content-head .c-heading-lv2 {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.l-content-head .c-heading-lv2__jp {
+    margin: 0;
+}
+
+#main_content .l-mainContent__inner:not(.--home) {
+    @include contentFrame;
+}

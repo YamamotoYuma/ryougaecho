@@ -8,7 +8,7 @@ the_post();
 $fv_img = get_stylesheet_directory_uri() . "/img/picture/pi_03.jpg";
 ?>
 	<main id="main_content" class="l-mainContent">
-		<div class="l-mainContent__inner">
+		<div class="l-mainContent__inner --home">
 
 			<section class="l-sect-home l-sect-fv sm" style="background-image:url('<?php echo $fv_img ;?>');"></section>
 			<!-- /.l-sect-home l-sect-fv -->

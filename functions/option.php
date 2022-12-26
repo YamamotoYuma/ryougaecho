@@ -29,6 +29,26 @@ function my_change_object_label() {
 
 /**
  * --------------------------------
+ * アーカイブタイトルをカスタム（カテゴリー：他を削除）
+ * --------------------------------
+ *
+ */
+function change_archive_title( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title('',false);
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	} elseif ( is_tax() ) {
+		$title = single_term_title('',false);
+	}
+	return $title;
+};
+add_filter( 'get_the_archive_title', 'change_archive_title' );
+
+/**
+ * --------------------------------
  *  固定ページにデフォルトアーカイブ機能(投稿一覧)を持たせる（変更後にパーマリンク設定で「変更を保存」すること）
  * --------------------------------
  */

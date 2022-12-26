@@ -225,3 +225,36 @@ function list_notfound( $txt = '記事が見つかりませんでした。' ) {
 	<!--./ p-card-no -->
 	<?php
 }
+
+/**
+ * ------ アーカイブページでスラッグを取得 -------
+ * 
+ */
+function get_archive_slug() {
+	//アーカイブページでない場合、false を返す
+	if ( !is_archive() ) return false;
+  
+	//日付アーカイブページなら
+	if ( is_date() ) {
+	  return "date";
+	}
+  
+	//投稿タイプアーカイブページなら
+	if ( is_post_type_archive() ) {
+	  $post_type = get_query_var( 'post_type' );
+	  if ( 'post' === $post_type ) $post_type = 'blog';
+	  if ( is_array( $post_type ) ) {
+		$post_type = reset( $post_type );
+	  }
+	  return $post_type;
+	}
+  
+	//投稿者アーカイブページなら
+	if  ( is_author() ) {
+	  return get_queried_object()->data->user_nicename;
+	}
+  
+	//それ以外（カテゴリ・タグ・タクソノミーアーカイブページ）
+	$term = get_queried_object();
+	return $term->slug;	
+  }

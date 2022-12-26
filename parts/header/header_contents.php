@@ -9,7 +9,7 @@ if ( $SETTING['info_bar_pos'] === 'head_top' ) SWELL_Theme::get_parts( 'parts/he
 
 // FV
 $fv_img =  "'" . get_stylesheet_directory_uri() . "/img/picture/pi_01.jpg'";
-if ( is_front_page() || is_home() ) echo '<div class="p-mainVisual mdlg" style="background-image:url('. $fv_img .');"></div>';
+if ( is_front_page() ) echo '<div class="p-mainVisual mdlg" style="background-image:url('. $fv_img .');"></div>';
 ?>
 
 <header id="header" class="l-header <?=esc_attr( $header_class )?>" data-spfix="<?=$SETTING['fix_header_sp'] ? '1' : '0'?>">

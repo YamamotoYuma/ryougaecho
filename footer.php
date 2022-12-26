@@ -22,7 +22,7 @@ if ( SWELL_Theme::is_show_sidebar() ) {
 
 	// CTA
 	if ( ! is_page( array( 'contact', 'thanks' ) ) ) {
-		SWELL_Theme::get_parts( 'parts/cta');
+		SWELL_Theme::get_parts( 'template-parts/cta');
 	}
 
 	// ぱんくず

@@ -1,0 +1,12 @@
+.p-breadcrumb__list {
+    justify-content: flex-end;
+}
+
+.p-breadcrumb__list .icon-home::before {
+    content: none;
+}
+
+.p-breadcrumb__item:last-child {
+    margin-right: 0;
+    padding-right: 0;
+}

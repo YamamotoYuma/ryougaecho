@@ -50,7 +50,9 @@
 	}
 
 	// タイトル(コンテンツ上)
-	if ( SWELL_Theme::is_show_ttltop() ) SWELL_Theme::get_parts( 'parts/top_title_area' );
+	if ( ! is_front_page() && ! is_single() ) {
+		SWELL_Theme::get_parts( 'parts/top_title_area' );
+	}
 
 	// ぱんくず
 	if ( 'top' === $SETTING['pos_breadcrumb'] ) SWELL_Theme::get_parts( 'parts/breadcrumb' );
