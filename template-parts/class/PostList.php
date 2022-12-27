@@ -109,6 +109,24 @@ class PostList {
 		<?php
 	}
 
+		/**
+	 * ------ 投稿カードの出力：テナント -------
+	 *
+	 */
+	public function the_card_tenant() {
+		$terms = get_the_terms( $post->ID, 'tenant_tag' );
+		$term_class = "";
+		foreach ( $terms as $term ) {
+			$term_class = $term_class. ' ' . $term->slug;
+		}
+		?>
+		<div class="p-card-tenant js-search-card<?php if ( $term_class ) echo $term_class; ?>">
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		</div>
+		<!-- /.p-card-tenant -->
+		<?php
+	}
+
 	/**
 	 * ------ メソッド：タームバッジの出力 -------
 	 *

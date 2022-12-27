@@ -141,3 +141,20 @@ function my_swell_term_meta_screens( $term_meta_screens ) {
  */
 // remove_action( 'add_meta_boxes', 'SWELL_Theme\Meta\Code\hook_add_meta_box', 1 );
 // remove_action( 'save_post', 'SWELL_Theme\Meta\Code\hook_save_post' );
+
+/**
+ * --------------------------------
+ * カスタム投稿用serch.phpを作成
+ * --------------------------------
+ *
+ */
+function custom_search_template( $template ){
+	if ( is_search() ){
+		$post_types = get_query_var( 'post_type' );
+		foreach ( (array) $post_types as $post_type ) $templates[] = "search-{$post_type}.php";
+		$templates[] = 'search.php';
+		$template = get_query_template( 'search', $templates);
+	}
+	return $template;
+}
+add_filter('template_include','custom_search_template');

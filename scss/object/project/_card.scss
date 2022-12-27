@@ -166,7 +166,16 @@
     }
 }
 
+/*--------------------------------
+    テナント
+--------------------------------*/
+.js-search-card {
+    display: none;
+}
 
+.js-search-card.is-show {
+    display: block;
+}
 
 
 

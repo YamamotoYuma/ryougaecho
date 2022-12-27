@@ -57,3 +57,29 @@
     background-size: contain;
     transition: .25s;
 }
+
+/*--------------------------------
+ *  テナントタグ
+--------------------------------*/
+.c-label-tag__unit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.c-label-tag {
+    padding: .5em 1em;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: 1;
+    background-color: #fff;
+    transition: .25s;
+    border-radius: 9999px;
+    &.is-active {
+        background-color: #000;
+        color: #fff;
+    }
+    &:active {
+        transform: scale(.9);
+    }
+}
