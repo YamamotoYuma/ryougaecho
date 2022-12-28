@@ -1,7 +1,11 @@
+// コンテンツエリア下部
 .l-content:not(.--contact):not(.--thanks) {
     margin-bottom: 0!important;
 }
 
+/*--------------------------------
+ *  ページタイトルエリア
+--------------------------------*/
 .l-content-head__inner {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -18,8 +22,4 @@
 
 .l-content-head .c-heading-lv2__jp {
     margin: 0;
-}
-
-#main_content .l-mainContent__inner:not(.--home) {
-    @include contentFrame;
 }

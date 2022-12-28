@@ -2,10 +2,14 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
 
-// リストタイプ
-$list_type = apply_filters( 'swell_post_list_type_on_search', SWELL_Theme::$list_type );
 // タグ一覧の取得
 $terms = get_terms('tenant_tag','hide_empty=0');
+
+// 検索キーワード
+if ( $_GET ) $keyword = $_GET['s'];
+
+// 投稿数の取得
+$post_count = wp_count_posts('tenant')->publish;
 ?>
 
 <div class="l-mainController">
@@ -27,15 +31,17 @@ $terms = get_terms('tenant_tag','hide_empty=0');
 </div>
 <!-- /.l-mainController -->
 
-<main id="main_content" class="l-mainContent l-article">
+<main id="main_content" class="l-mainContent">
 	<div class="l-mainContent__inner">
-		<?php
-			SWELL_Theme::pluggable_parts( 'page_title', [
-				'title'     => SWELL_Theme::get_search_title(),
-				'has_inner' => true,
-			] );
-		?>
-		<div class="p-searchContent u-mt-40">
+		<div class="p-searchResult">
+			<h2 class="p-searchResult__title">キーワード：<span class="p-searchResult__keyword"><?php echo esc_html( $keyword ); ?></span>
+				<p class="p-searchResult__count">
+					<span class="js-counter"></span>
+					<span> / </span>
+					<span><?php echo $post_count; ?></span>
+					<span>件</span>
+				</p>
+			</h2>
 			<?php
 				// 新着投稿一覧 ( Main loop )
 				$list_works = new PostList(
@@ -49,4 +55,5 @@ $terms = get_terms('tenant_tag','hide_empty=0');
 		</div>
 	</div>
 </main>
+
 <?php get_footer(); ?>

@@ -43,16 +43,16 @@ jQuery(document).ready(function ($) {
 				})
 		
 			}
+			countActive();
 		}
 	
 		//タグクリックからハッシュへ変換
 		$('.js-search-tag').on('click',function(){
 			var this_hash=$(this).data('term')
-		  
 			if (this_hash=='all') {
 				hashs= [];
 			} else {
-			var index=hashs.findIndex((elm) => elm==this_hash) 
+				var index=hashs.findIndex((elm) => elm==this_hash) 
 				if (index<0) {
 					//存在しない場合は追加
 					hashs.push(this_hash)
@@ -73,5 +73,14 @@ jQuery(document).ready(function ($) {
 	  return hashFilter && decodeURIComponent( hashFilter );
 	}
 
+	/*--------------------------------
+	 *  表示テナント数カウント
+	--------------------------------*/
+	function countActive() {
+		let countActive   = $('.js-search-card.is-show').length;
+		let counterNumber = $('.js-counter');
+		counterNumber.text( countActive );
+	}
+	countActive();
 	// ---------------------------------------------------------------------------------------------[jQuery記述欄ここまで]
 });

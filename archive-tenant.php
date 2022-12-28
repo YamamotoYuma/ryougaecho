@@ -1,20 +1,12 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
-
 get_header();
 
-if ( SWELL_Theme::is_term() ) :
-	SWELL_Theme::get_parts( 'archive-term' );
-else :
-	$archive_data     = SWELL_Theme::get_archive_data();
-	$archive_title    = $archive_data['title'];
-	$archive_subtitle = str_replace( 'pt_archive', 'archive', $archive_data['type'] );
+// タグ一覧の取得
+$terms = get_terms('tenant_tag','hide_empty=0');
 
-	// リストタイプ
-	$list_type = apply_filters( 'swell_post_list_type_on_archive', SWELL_Theme::$list_type, $archive_data );
-
-	// タグ一覧の取得
-	$terms = get_terms('tenant_tag','hide_empty=0');
+// 投稿数の取得
+$post_count = wp_count_posts('tenant')->publish;
 ?>
 
 <div class="l-mainController">
@@ -36,9 +28,17 @@ else :
 </div>
 <!-- /.l-mainController -->
 
-<main id="main_content" class="l-mainContent l-article">
+<main id="main_content" class="l-mainContent">
 	<div class="l-mainContent__inner">
-		<div class="p-archiveContent u-mt-40">
+		<div class="p-searchResult">
+			<h2 class="p-searchResult__title">キーワード：<span class="p-searchResult__keyword">なし</span>
+				<p class="p-searchResult__count">
+					<span class="js-counter"></span>
+					<span> / </span>
+					<span><?php echo $post_count; ?></span>
+					<span>件</span>
+				</p>
+			</h2>
 			<?php
 				// 新着投稿一覧 ( Main loop )
 				$list_works = new PostList(
@@ -52,5 +52,5 @@ else :
 		</div>
 	</div>
 </main>
-<?php endif;
-get_footer(); ?>
+
+<?php get_footer(); ?>

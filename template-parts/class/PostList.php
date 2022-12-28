@@ -121,7 +121,7 @@ class PostList {
 		}
 		?>
 		<div class="p-card-tenant js-search-card<?php if ( $term_class ) echo $term_class; ?>">
-			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<a class="p-card-tenant__title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</div>
 		<!-- /.p-card-tenant -->
 		<?php
@@ -323,7 +323,7 @@ class PostList {
 
 		// 記事がなかった場合
 		if ( ! have_posts() ) :
-			$not_founded_text = __( '記事が見つかりませんでした。', 'swell' );
+			$not_founded_text = __( '該当するテナントは見つかりませんでした。', 'swell' );
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo apply_filters( 'swell_post_list_404_text', '<p>' . $not_founded_text . '</p>' );
 			return;

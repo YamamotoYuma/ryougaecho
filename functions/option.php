@@ -112,12 +112,12 @@ function disable_editor( $use_block_editor, $post ) {
  *
  */
 function my_swell_side_meta_screens( $screens ) {
-	$exclude_post_type = ['post_type'];
+	$exclude_post_type = ['tenant'];
 	$screens = array_diff( $screens, $exclude_post_type );
 	$screens = array_values( $screens );
 	return $screens;
 }
-// add_filter( 'swell_side_meta_screens', 'my_swell_side_meta_screens');
+add_filter( 'swell_side_meta_screens', 'my_swell_side_meta_screens');
 
 /**
  * --------------------------------
@@ -139,8 +139,8 @@ function my_swell_term_meta_screens( $term_meta_screens ) {
  * --------------------------------
  *
  */
-// remove_action( 'add_meta_boxes', 'SWELL_Theme\Meta\Code\hook_add_meta_box', 1 );
-// remove_action( 'save_post', 'SWELL_Theme\Meta\Code\hook_save_post' );
+remove_action( 'add_meta_boxes', 'SWELL_Theme\Meta\Code\hook_add_meta_box', 1 );
+remove_action( 'save_post', 'SWELL_Theme\Meta\Code\hook_save_post' );
 
 /**
  * --------------------------------

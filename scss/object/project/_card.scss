@@ -169,6 +169,51 @@
 /*--------------------------------
     テナント
 --------------------------------*/
+.p-card-tenant__unit {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: percentage(40/1128);
+    @include media(md) {
+        grid-template-columns: repeat(2,1fr);
+    }
+    @include media(sm) {
+        grid-template-columns: 100%;
+    }
+}
+
+.p-card-tenant {
+    padding: em(20) 0;
+    line-height: $lh_tight;
+    border-bottom: 1px dashed #000;
+    font-size: 16px;
+}
+
+.p-card-tenant__title {
+    padding-right: 2em;
+    display: block;
+    line-height: inherit;
+    position: relative;
+    &::after {
+        content: '';
+        width: 1.5em;
+        height: 1.5em;
+        background-image: url('./img/icon/ic_01.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: .25s;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    &:focus,
+    &:hover {
+        &::after {
+            transform: translateX(4px);
+        }
+    }
+}
+
 .js-search-card {
     display: none;
 }
@@ -176,7 +221,6 @@
 .js-search-card.is-show {
     display: block;
 }
-
 
 
 /*--------------------------------

@@ -77,7 +77,7 @@ if ( is_search() ) {
 	$the_terms = get_the_terms( $the_id, $the_tax );
 
 	// タームーが紐づいていれば表示
-	if ( $the_terms !== false ) {
+	if ( $the_terms !== false && 'tenant_tag' !== $the_tax ) {
 
 		// 子を持たないタームだけを集めた配列
 		$child_terms = [];

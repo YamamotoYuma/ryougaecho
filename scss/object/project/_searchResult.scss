@@ -1,0 +1,25 @@
+.p-searchResult__title {
+    margin-bottom: 40px;
+    padding-right: em(75,18);
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    @include media(sm) {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+}
+
+.p-searchResult__keyword {
+    white-space: normal;
+}
+
+.p-searchResult__count {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

@@ -109,9 +109,7 @@ select.drop {
 	background-size: auto 1em;
 }
 
-/*--------------------------------
-    ボックス
---------------------------------*/
+/*------ ボックス -------*/
 .p-form-box {
 	margin-top: 60px;
 	@include media(sm) {
@@ -164,9 +162,7 @@ select.drop {
 	}
 }
 
-/*--------------------------------
-    ラベル
---------------------------------*/
+/*------ ラベル -------*/
 .c-label-inquiry {
     margin-right: .5em;
     padding: .25em;
@@ -180,9 +176,7 @@ select.drop {
     }
 }
 
-/*--------------------------------
-    送信ボタン
---------------------------------*/
+/*------ 送信ボタン -------*/
 #submit.c-btn-submit {
     margin: 0 auto;
     margin-top: 40px;
@@ -203,4 +197,50 @@ select.drop {
         background-color: #b5b5b5!important;
         opacity: 1;
     }
+}
+
+/*--------------------------------
+ *  検索フォーム
+--------------------------------*/
+.p-form-search {
+	margin: 0 auto;
+	margin-top: 60px;
+	width: 780px;
+	max-width: 100%;
+	position: relative;
+	display: block;
+	font-size: 16px;
+	@include media(sm) {
+		margin-top: 45px;
+	}
+}
+
+.p-form-search__input {
+	padding: em(14) em(70) em(14) em(30);
+	display: block;
+	line-height: 1;
+	width: 100%;
+	font-size: inherit;
+	border: 2px solid #000;
+	border-radius: 9999px;
+	background-color: #fff;
+	&::placeholder {
+		color: #CFCFCF;
+	}
+}
+
+.p-form-search__button {
+	font-size: em(24);
+	line-height: 1;
+	padding: em(8,24);
+	border: none;
+	position: absolute;
+	background-color: transparent;
+	right: em(22,24);
+	top: 50%;
+	transform: translateY(-50%);
+	transition: .25s;
+	&:active {
+		transform: scale(.9) translateY(-50%);
+	}
 }
